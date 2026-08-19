@@ -14,7 +14,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const app = express()
 
-app.use(helmet())
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        // products use external image hosts (Cloudinary, picsum, admin URLs)
+        'img-src': ["'self'", 'data:', 'blob:', 'https:'],
+      },
+    },
+  })
+)
 app.use(
   cors({
     origin: process.env.CLIENT_URL || 'http://localhost:5173',

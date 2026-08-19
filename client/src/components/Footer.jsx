@@ -14,6 +14,7 @@ const columns = [
   {
     title: 'Help',
     links: [
+      { label: 'About Us', to: '/about' },
       { label: 'Track My Order', to: '/orders' },
       { label: 'FAQ', to: '/faq' },
       { label: 'Contact Us', to: '/contact' },

@@ -174,6 +174,26 @@ export default function Navbar() {
         >
           All Products
         </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium ${
+              isActive ? 'bg-brand-50 text-brand-700' : 'text-gray-700 hover:bg-gray-100'
+            }`
+          }
+        >
+          About Us
+        </NavLink>
+        <NavLink
+          to="/faq"
+          className={({ isActive }) =>
+            `whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium ${
+              isActive ? 'bg-brand-50 text-brand-700' : 'text-gray-700 hover:bg-gray-100'
+            }`
+          }
+        >
+          FAQ
+        </NavLink>
         {data?.categories?.map((cat) => (
           <NavLink
             key={cat._id}
@@ -207,6 +227,12 @@ export default function Navbar() {
           <div className="flex flex-col gap-1">
             <Link to="/shop" className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100" onClick={() => setMobileOpen(false)}>
               All Products
+            </Link>
+            <Link to="/about" className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100" onClick={() => setMobileOpen(false)}>
+              About Us
+            </Link>
+            <Link to="/faq" className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100" onClick={() => setMobileOpen(false)}>
+              FAQ
             </Link>
             {data?.categories?.map((cat) => (
               <Link
